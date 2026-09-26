@@ -1,0 +1,32 @@
+[package]
+name = "keytool"
+version = "0.1.0"
+edition = "2021"
+description = "Configurator for the USB HID macro keypad (VID 0x1189 / 0x514C, PID 0x883x/0x884x)"
+
+[lib]
+name = "keytool"
+path = "src/lib.rs"
+
+[[bin]]
+name = "keytool"
+path = "src/bin/cli.rs"
+
+[[bin]]
+name = "keytool-gui"
+path = "src/bin/gui.rs"
+required-features = ["gui"]
+
+[dependencies]
+hidapi = "2.6"
+crossbeam-channel = "0.5"
+eframe = { version = "0.29", optional = true }
+rfd = { version = "0.14", optional = true }
+serde = { version = "1", features = ["derive"], optional = true }
+serde_json = { version = "1", optional = true }
+
+[features]
+default = []
+# `dep:` form so the optional deps are only reachable via the `gui` feature
+# (no implicit bare-name features exposed).
+gui = ["eframe", "dep:rfd", "dep:serde", "dep:serde_json"]

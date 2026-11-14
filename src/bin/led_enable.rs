@@ -3,7 +3,6 @@
 //! Pattern: [0x03, 0xFE, 0xB0, 0x01, <mode>, 0x00...] + commit
 //! Where mode = 0x00..0x05 (LED_Mode_0 through LED_Mode_5)
 
-use std::io::Write;
 use std::time::Duration;
 
 use keytool::{

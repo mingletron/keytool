@@ -15,7 +15,7 @@ use std::time::Duration;
 
 use keytool::{
     device::Device,
-    protocol::{self, off, KeyRecord, REPORT_LEN},
+    protocol::{self, off, REPORT_LEN},
 };
 
 fn hex(b: &[u8]) -> String {

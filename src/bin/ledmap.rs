@@ -14,10 +14,6 @@ use keytool::{
     protocol::{self, REPORT_LEN},
 };
 
-fn hex(b: &[u8]) -> String {
-    b.iter().map(|x| format!("{x:02x}")).collect()
-}
-
 fn send_led(d: &Device, layer: u8, bitmask: u8) {
     let mut report = [0u8; REPORT_LEN];
     report[0] = 0x03;

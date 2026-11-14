@@ -9,7 +9,6 @@
 //!   0x72 = colour group 7, key bits 0x2
 //!   0x71 = colour group 7, key bits 0x1
 
-use std::io::Write;
 use std::time::Duration;
 
 use keytool::{
